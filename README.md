@@ -1,97 +1,130 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# KloudiusTestApp
 
-# Getting Started
+A modern React Native authentication boilerplate featuring a clean UI, modular feature-based architecture, and production-ready patterns.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+  
 
-## Step 1: Start Metro
+-----
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## ✨ Demo
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+A quick look at the user authentication flow, from the landing screen to the user profile.
 
-```sh
-# Using npm
-npm start
+https://github.com/user-attachments/assets/3763b797-1e93-411c-b65e-858cbb2925d6
 
-# OR using Yarn
-yarn start
+## Overview
+
+KloudiusTestApp is a React Native application designed to serve as a high-quality template for a production-style authentication flow. It demonstrates a modern UI, a scalable feature-based architecture, and best practices for state management and navigation in a mobile app.
+
+## 🎯 Features
+
+  - **🔐 Authentication**
+
+      - Login & Register forms with real-time, client-side validation.
+      - Smooth bottom sheet UI for forms with keyboard-aware handling.
+      - "Try Demo Account" button for instant access with pre-filled credentials.
+      - Visual password strength indicator during registration.
+
+  - **🧭 Navigation**
+
+      - Conditional stack navigator: `AuthStack` for unauthenticated users and `MainTabs` for logged-in users.
+      - Bottom tab navigator for the main app interface (Home & Profile).
+
+  - **👤 User Profile**
+
+      - View current user details.
+      - Seamlessly edit and save full name.
+      - Secure logout functionality.
+
+  - **🎨 Theming & UI**
+
+      - Centralized design system (`lightTheme`) with tokens for colors, spacing, typography, and shadows.
+      - A library of reusable base components (`Button`, `TextInput`) and composite components (`TabSelector`, `PasswordStrengthIndicator`, `Checkbox`).
+
+  - **🛠️ Services & Storage**
+
+      - Mock authentication service that mimics a real backend API.
+      - Type-safe `AsyncStorage` wrapper for reliable local data persistence.
+
+## 💻 Tech Stack
+
+  - **Core**: [React Native](https://reactnative.dev/) `0.80` & [React](https://react.dev/) `19`
+  - **Navigation**: [React Navigation 7](https://reactnavigation.org/) (Stack & Bottom Tabs)
+  - **UI**: [Gorhom Bottom Sheet](https://gorhom.github.io/react-native-bottom-sheet/)
+  - **Local Storage**: [@react-native-async-storage/async-storage](https://react-native-async-storage.github.io/async-storage/)
+  - **Tooling**: TypeScript, ESLint, Prettier
+
+## 📂 Project Structure
+
+The `src` directory is organized by feature, promoting scalability and separation of concerns.
+
+```text
+src/
+├── assets/          # Static assets (images, fonts)
+├── components/      # Reusable UI components (primitives and composites)
+├── config/          # Centralized theme, constants, and configuration
+├── features/        # Feature-based modules (the core of the app)
+│   ├── auth/        # Authentication screens, hooks, services, types
+│   ├── home/        # Home screen module
+│   └── profile/     # Profile screen module
+├── navigation/      # Navigators, routes, and helpers
+├── providers/       # Global context providers (e.g., AuthProvider)
+└── utils/           # Shared utilities (storage, validation helpers)
 ```
 
-## Step 2: Build and run your app
+## 🚀 Getting Started
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Prerequisites
 
-### Android
+  - [Node.js](https://nodejs.org/) `>= 18`
+  - A correctly configured React Native development environment for your OS.
+      - Follow the **official setup guide**: [React Native Environment Setup](https://reactnative.dev/docs/set-up-your-environment).
 
-```sh
-# Using npm
-npm run android
+### 🛠️ Installation & Setup
 
-# OR using Yarn
-yarn android
-```
+1.  **Clone the repository and install dependencies:**
 
-### iOS
+    ```sh
+    git clone https://github.com/your-username/KloudiusTestApp.git
+    cd KloudiusTestApp
+    npm install
+    ```
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+2.  **Install iOS Dependencies (iOS only):**
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+    ```sh
+    cd ios
+    bundle install
+    bundle exec pod install
+    cd ..
+    ```
 
-```sh
-bundle install
-```
+3.  **Start the Metro bundler:**
 
-Then, and every time you update your native dependencies, run:
+    ```sh
+    npm start
+    ```
 
-```sh
-bundle exec pod install
-```
+4.  **Run the application on your target platform:**
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+    ```sh
+    # For Android
+    npm run android
 
-```sh
-# Using npm
-npm run ios
+    # For iOS
+    npm run ios
+    ```
 
-# OR using Yarn
-yarn ios
-```
+## 👨‍💻 Demo Account
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+For quick access, use the "Try Demo Account" button on the login screen, or enter the credentials manually:
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+  - **Email**: `demo@example.com`
+  - **Password**: `password123`
 
-## Step 3: Modify your app
+## 🧠 Architectural Principles
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+  - **Modularity**: Code is organized into features (`src/features/*`), making it easy to add, remove, or modify parts of the application independently.
+  - **Centralized Design**: The `lightTheme` object in `src/config/theme.ts` is the single source of truth for all design tokens. Avoid hard-coded styles.
+  - **Barrel Exports**: Index files (`index.ts`) are used extensively to simplify import statements and create clean module entry points.
+  - **Service Abstraction**: Functionality like local storage is wrapped in a dedicated service (`storageService`) to provide a consistent, type-safe API and make it easily replaceable.
