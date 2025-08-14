@@ -76,7 +76,7 @@ src/
 
 ### Prerequisites
 
-  - [Node.js](https://nodejs.org/) `>= 18`
+  - [Node.js](https://nodejs.org/) `>= 24`
   - A correctly configured React Native development environment for your OS.
       - Follow the **official setup guide**: [React Native Environment Setup](https://reactnative.dev/docs/set-up-your-environment).
 
